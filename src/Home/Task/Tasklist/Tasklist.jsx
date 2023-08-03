@@ -5,7 +5,7 @@ import SectionTitle from '../../../Components/SectionTitle';
 const Tasklist = () => {
     const [alltasks, setAlltasks] = useState([]);
 
-    const url = `http://localhost:5000/task`;
+    const url = `https://task-server-nu.vercel.app/task`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -16,12 +16,12 @@ const Tasklist = () => {
     const handleDelete = id => {
         const proceed = confirm('Are You sure want To Delete Toy');
         if (proceed) {
-            fetch(`http://localhost:5000/task/${id}`, {
+            fetch(`https://task-server-nu.vercel.app/task/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
-                    // console.log(data);
+                    
                     if (data.deletedCount > 0) {
                         alert('deleted SuccessFully');
                         const remaining = alltasks.filter(alltask => alltask._id !== id);

@@ -19,7 +19,7 @@ const AddedTask = () => {
         }
         console.log(add);
 
-        fetch('http://localhost:5000/task', {
+        fetch('https://task-server-nu.vercel.app/task', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

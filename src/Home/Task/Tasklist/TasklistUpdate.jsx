@@ -10,10 +10,10 @@ const TasklistUpdate = () => {
         event.preventDefault();
         const form = event.target;
         const updatedStatus = form.status.value;
-        const updatedTask = { status: updatedStatus }; // Create a new task object with updated status
+        const updatedTask = { status: updatedStatus }; 
 
-        fetch(`http://localhost:5000/task/${_id}`, {
-            method: "PATCH", // Use the PATCH method for update
+        fetch(`https://task-server-nu.vercel.app/task/${_id}`, {
+            method: "PATCH", 
             headers: {
                 "Content-Type": "application/json",
             },
